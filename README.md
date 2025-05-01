@@ -1,5 +1,5 @@
 # MSDS696_GHG
-##MSDS696 Scope 3 GHG emissions research project
+## Scope 3 GHG emissions, part 2
 ### MSDS 696 S8W2 2025 - Regis University
 
 **Please visit my [MSDS 692](https://github.com/JusSnP/MSDS696_GHG) repo for the first part of this research project.**
