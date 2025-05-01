@@ -1,7 +1,7 @@
 # Modeling Scope 3 GHG Emissions, Part 2 
 ### MSDS 696 S8W2 2025 - Regis University
 
-** Please visit my [MSDS 692](https://github.com/JusSnP/MSDS696_GHG) repo for the first part of this research project.
+* * Please visit my [MSDS 692](https://github.com/JusSnP/MSDS696_GHG) repo for the first part of this research project.
 
  
 ### Summary  
