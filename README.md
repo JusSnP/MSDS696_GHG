@@ -1,10 +1,11 @@
 # Modeling Scope 3 GHG Emissions, Part 2 
 ### MSDS 696 S8W2 2025 - Regis University
 
-**Please visit my [MSDS 692](https://github.com/JusSnP/MSDS696_GHG) repo for the first part of this research project.**
+**Please visit my [MSDS 692](https://github.com/JusSnP/MSDS696_GHG) repo for the first part of this research project.
 
  
-  
+### Summary  
+
 This repository contains notebooks, data, and a python library associated with work performed during MSDS 696 - Data Science Practicum 2 as a member of Dr. Sorauf's Greenhouse Gas Emissions research group. This project's focus was to acquire and analyze data associated with new features to incorporate with the group's existing data. This data will be used by the team to create models *predicitng scope 3 greenhouse gas emissions*. Additionally XGBoost and feed-forward neural network models were compared as a baseline for future work within the group. For more details please see my [final presentation](/presentation/Parsons_GHG_MSDS692_v8.pptx).
 
 ### Contents
@@ -23,7 +24,8 @@ This repository contains notebooks, data, and a python library associated with w
     * mm_fmp_data_ - Mega merged file with new FMP features merged
 * Presentation - Final presentation materials delivered on 3/6/2025
 
-### Summary
+### Discussion
+
 This is a non-comprehensive summary of the work completed during MSDS 692.
 
 The API used to call FMP data was updated since the reserach group's original pull which required some updating. Additionally there were issues with how the data was being sorted, organized, and merged through the API call libraries. There were consistent issues with what is assumed to be server-side timing issues producing inconsistent numbers and composition of data retrieved from FMP.  
