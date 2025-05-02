@@ -6,23 +6,27 @@
  
 ### Summary  
 
-This repository contains notebooks, data, and a python library associated with work performed during MSDS 696 - Data Science Practicum 2 as a member of Dr. Sorauf's Greenhouse Gas Emissions research group. This project's focus was to acquire and analyze data associated with new features to incorporate with the group's existing data. This data will be used by the team to create models *predicitng scope 3 greenhouse gas emissions*. Additionally XGBoost and feed-forward neural network models were compared as a baseline for future work within the group. For more details please see my [final presentation](/Assets/GHG_MSDS696.pptx) and the [live recording](https://github.com/Regis-University-Data-Science/Practicum-Showcase).
+For more details please see my [final presentation](/Assets/GHG_MSDS696.pptx) and the [live recording](https://github.com/Regis-University-Data-Science/Practicum-Showcase).
 
 ### Contents
 
-* Code - Three notebooks
-    * FMP_pull_v1.0 - Jupyter notebook, pulls data using the [Financial Modeling Prep](https://site.financialmodelingprep.com/) (FMP) API. Note the API key was removed from this notebook since it is a licensed key.
-    * FMP_API_library - Python source file, library containing API call functions
-    * FMP_analysis - EDA and feature engineering of new FMP data and place-name treatment carried over from original research group analysis/
-    * mm_nn - Baseline feed-forward neural network used to compare against the groups XGBoost model which was done prior to the work contained in this repo. This neural network *does not* use the new FMP features and is intended as a baseline using an expanded 10-year mega merged dataset vs the group's original 1 year's worth of data.
-* Data - CSV files which are timestamped. If importing please take note of file date-time group suffix. Where indicated the files contain new (to this project) data pulled from FMP and descriptions can be obtained from their website. If unspecified, the data is purely CDP and old FMP data.
-    * covariance_with_scope3_ - output of covariance calculations all features and constant scope 3 emssion type with scope 3 emission amount
-    * EC_data_ - FMP data: Symbol_1, periodOfReport, employeeCount (non-historical data)
-    * EC_Hist_data - FMP data: Symbol_1, year, employeeCount (historical 2013-2023)
-    * ESG_data - FMP data: Symbol_1, date, environmentalScore, socialScore, governanceScore, ESGScore
-    * Mega_merged_all_real_values - Original dataset used by the research group containing multiple categorical and quantitative emissions features plus financial features from original FMP pulls.
-    * mm_fmp_data_ - Mega merged file with new FMP features merged
-* Presentation - Final presentation materials delivered on 3/6/2025
+*Assets
+* Code - Two notebooks
+  While this project used more than 10 notebooks the notebook contained in this directory contains the most polished and complete of all versions. Differences between the notebooks are either variations in network topology or hyperparameters, which is provided below, or in implementing coding/data science best practices.
+    * nn_data_prep_V2 - Jupyter notebook: This notebook prepares and visualizes the source data for use in the feed-forward neural network notebook. Note EDA, cleansing, and outlier treatment was performed the previous term by a different team member. 
+    * nn_v14 - Jupyter notebook: This notebook contains the 'pipeline' for training and evaluating the final model. 
+* Data - One CSV and one sub-directory containing 17 additional CSVs 
+    * GHG_Post_Outlier - CSV file: This is the source data which is processed by nn_data_prep_V2.
+    * Scope_3_emissions_type_csvs/ - Sub-directory: This directory contains 17 CSVs separating the source data by type three emissions type. 
+* logs - 364 total directories containing log files
+    * (Scope_3_emissions_type) - Sub-directory: This directory contains sub-directories holding training and validation data for all folds completed during training on all type three emissions types.
+    * fit - Sub-irectory - This directory contains timestamped training and validation data for use with TensorBoards.
+* Models - Keras files: This directory contains stored models for all neural networks trained (v2-v14).
+* Results - 13 CSVs: The CSVs contained within this directory hold metrics of model performance for each scope three emissions type organized by neural network version 
+
+### Methods
+
+
 
 ### Discussion
 
