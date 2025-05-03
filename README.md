@@ -18,8 +18,8 @@ This repository contains notebooks, data, and a python library associated with w
 * Code - Two notebooks
   While this project used more than 10 notebooks the notebooks contained in this directory contains the most polished and complete of all versions. Differences between the notebooks are either variations in network topology/hyperparameters, which is provided below, or in implementing coding/data science best practices.
     * nn_data_prep_V2 - Jupyter notebook: This notebook prepares and visualizes the source data for use in the feed-forward neural network notebook. Note EDA, cleansing, and outlier treatment was performed the previous term by a different team member. 
-[!NOTE]
-The notebooks in this repo contain environment specific lines which must be edited as appropriate before running.
+>[!NOTE]
+>The notebooks in this repo contain environment specific lines which must be edited as appropriate before running.
     * nn_v14 - Jupyter notebook: This notebook contains the 'pipeline' for training and evaluating the final model. 
 * Data - One CSV and one sub-directory containing 17 additional CSVs 
     * GHG_Post_Outlier - CSV file: This is the source data which is processed by nn_data_prep_V2.
