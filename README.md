@@ -15,8 +15,8 @@ This repository contains notebooks, data, and a python library associated with w
 ### Contents
 
 * Assets - Assorted files: This directory contains my final presenation and any images used within this readme.
-* Code - Two notebooks
-  While this project used more than 10 notebooks the notebooks contained in this directory contains the most polished and complete of all versions. Differences between the notebooks are either variations in network topology/hyperparameters, which is provided below, or in implementing coding/data science best practices.
+* Code - Two notebooks  
+  While this project used more than 10 notebooks the notebooks contained in this directory contains the most polished and complete of all versions. Differences between the notebooks are either variations in network topology/hyperparameters, which is provided below, or in implementing coding/data science best practices. I _think_ the code has clear marking, but if there are any questions please reach out!
     * nn_data_prep_V2 - Jupyter notebook: This notebook prepares and visualizes the source data for use in the feed-forward neural network notebook. Note EDA, cleansing, and outlier treatment was performed the previous term by a different team member. 
     * nn_v14 - Jupyter notebook: This notebook contains the 'pipeline' for training and evaluating the final model.
 >[!NOTE]
