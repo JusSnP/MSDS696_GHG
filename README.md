@@ -65,7 +65,7 @@ Multiple iterations of topology and hyperparameters were trained on each scope t
  
 Each iteration of the network architecture was initially only judged based on [R<sup>2</sup>](https://statisticsbyjim.com/glossary/r-squared/). This metric explains how well a regression model fits to the data with acknowledged deficiencies in cases such as bias within the data. A single metric was chosen for simplicity while for more thorough treatments multiple metrics should be compared in order to determine if the model works best _for the specific use case and data_. Ultimately the configuration found in v10 was chosen as optimal for all emission types as a whole and K-Folds and early stopping where added to the code. The image below shows the model performance for each emission type. Note v10 is not always the best, it just trended higher for more emission types on average.
 
-![[Model performance](/Assets/network_performance.png)
+![Model performance](/Assets/network_performance.png)
 
 While iterating on the model configurations it was discovered that there were data leakage issues and incorrect implementation of K-Means when initializing the final model with average weights. Ultimately these issues were (mostly) fixed and implemented in v14 which was a simple feed-forward neural network with two hidden layers, dropouts, regularization, and other paramters as indiacted in the table. 
 
