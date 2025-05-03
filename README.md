@@ -75,6 +75,15 @@ v14 performed well for select emission types depending on which metric was exami
 
 ![RMSLE and R<sub>2</sub> for v14 over all emissions types](/Assets/v14rmsleR2.png)
 
+**Future Work**
 
+As stated, there is still alot to do before these models could be deployed to confidently predict scope three greenhouse gas emissions. Below is a non-comprehensive list of those tasks.
+
+1) Explore alternative architectures and topologies
+2) Apply grid search over all hyperparameters including activation (output) and optimizer
+3) Determine optimal architecture, topology, and hyperparameters for each individual emission type
+4) Re-visit outliers and distribution of source data
+5) Develop a pipeline for easy deployment
+6)  
 
 
