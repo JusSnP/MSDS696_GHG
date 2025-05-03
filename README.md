@@ -46,7 +46,7 @@ After correcting account_id and stock symbol features, remaining zeros found wit
 
 Noting that many of the emissions types have single to low double digit sample counts it was determined that ESG data would be abandoned and the remainder of the project would be conducted on the 40k sample dataset mentioned above without merging in ESG data. Below shows samples per emission type without the drops induced by adding ESG data. Notice there are still many emissions types with low sample sizes, but the Y-scale has shifted significantly upward.
 
-![Samples without adding ESG](/Assets/counts_without_ESG.png)
+![Samples without adding ESG](/Assets/counts_withoutESG.png)
 
 The data was then split into 17 separate dataframes (CSVs) by emission type. Previous analysis showed extreme ranges within the data (5+ orders of magnitude) for many features. To overcome this and prepare for model training standard scaler was implemented within the model training loops. The only other data treatment conducted was performing one-hot encoding on the categorical features _which was done outside of the training loops and is now recognized as a potential source for data leakage_.
 
