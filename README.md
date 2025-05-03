@@ -18,9 +18,9 @@ This repository contains notebooks, data, and a python library associated with w
 * Code - Two notebooks
   While this project used more than 10 notebooks the notebooks contained in this directory contains the most polished and complete of all versions. Differences between the notebooks are either variations in network topology/hyperparameters, which is provided below, or in implementing coding/data science best practices.
     * nn_data_prep_V2 - Jupyter notebook: This notebook prepares and visualizes the source data for use in the feed-forward neural network notebook. Note EDA, cleansing, and outlier treatment was performed the previous term by a different team member. 
+    * nn_v14 - Jupyter notebook: This notebook contains the 'pipeline' for training and evaluating the final model.
 >[!NOTE]
 >The notebooks in this repo contain environment specific lines which must be edited as appropriate before running.
-    * nn_v14 - Jupyter notebook: This notebook contains the 'pipeline' for training and evaluating the final model. 
 * Data - One CSV and one sub-directory containing 17 additional CSVs 
     * GHG_Post_Outlier - CSV file: This is the source data which is processed by nn_data_prep_V2.
     * Scope_3_emissions_type_csvs/ - Sub-directory: This directory contains 17 CSVs separating the source data by type three emissions type. 
@@ -48,8 +48,32 @@ Noting that many of the emissions types have single to low double digit sample c
 
 ![Samples without adding ESG](/Assets/counts_without_ESG.png)
 
-Within the neural network training loops described below the data was scaled using standard scaler. Previous analysis showed extreme ranges within the data (5+ orders of magnitude) for many features. 
+The data was then split into 17 separate dataframes (CSVs) by emission type. Previous analysis showed extreme ranges within the data (5+ orders of magnitude) for many features. To overcome this and prepare for model training standard scaler was implemented within the model training loops. The only other data treatment conducted was performing one-hot encoding on the categorical features _which was done outside of the training loops and is now recognized as a potential source for data leakage_.
 
+**Modeling**
+
+Multiple caveats were established prior to developing neural networks.
+
+1) This project would focus on feed-forward neural networks and no other architectures.
+2) One "optimal network" would be selected understanding that each scope three emissions type most likely needs its own topology and hyperparameters for best results.
+3) Manual selection of hyperparamters would be conducted since grid search attempts proved to extend well into the day(s) to run timeframe and limited troubleshooting/analysis opportunities
+4) There's going to be plenty of work to do after this...
+
+Multiple iterations of topology and hyperparameters were trained on each scope three emissions type and were denoted v2-v14. The image below contains a description of each network. The networks were built using the Keras library contained within the TensorFlow library in order to exploit TensorBoards as a side quest. 
+ 
+![Network iteration details](/Assets/networks.png)
+ 
+Each iteration of the network architecture was initially only judged based on [R<sup>2</sup>](https://statisticsbyjim.com/glossary/r-squared/). This metric explains how well a regression model fits to the data with acknowledged deficiencies in cases such as bias within the data. A single metric was chosen for simplicity while for more thorough treatments multiple metrics should be compared in order to determine if the model works best _for the specific use case and data_. 
+
+While iterating on the model configurations it was discovered that there were data leakage issues and incorrect implementation of K-Means when initializing the final model with average weights. Ultimately these issues were (mostly) fixed and implemented in v14 which was a simple feed-forward neural network with two hidden layers, dropouts, regularization, and other paramters as indiacted in the table. 
+
+**Results**
+
+As mentioned, it was noted that there were issues corrected in v14. One such issue, unrelated to data leakage or K-Folds implementation, was early stopping on folds. The image below shows the high variation in early stopping on folds while running v12 of the code. As understood, this indicates that there are still issues within the source data. To help mitigate this in v14 the initial test set containing all samples from 2023 was not separated out and instead train/(validation)/test split was performed on the entire dataset. 
+
+v14 performed well for select emission types depending on which metric was examined. R<sub>2</sub> as high as 0.88 was observed while Root Mean Square Log Error (RMSLE) achieved results as low as 2.75. This project is an excellent example of the difficulty in judging a model on one metric alone. High R<sub>2</sub> _rarely_ correlated to a low RMSLE for the various emission types over all versions. The image below shows these results.
+
+![RMSLE and R<sub>2</sub> for v14 over all emissions types](/Assets/v14rmsleR2.png)
 
 
 
