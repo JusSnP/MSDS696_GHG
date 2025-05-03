@@ -84,6 +84,5 @@ As stated, there is still alot to do before these models could be deployed to co
 3) Determine optimal architecture, topology, and hyperparameters for each individual emission type
 4) Re-visit outliers and distribution of source data
 5) Develop a pipeline for easy deployment
-6)  
 
 
