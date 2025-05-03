@@ -36,7 +36,7 @@ _This is a non-comprehensive summary of the work completed during MSDS 696._
 
 **Data**
 
-My first step was to integrate the data obtained during the first half of my Data Science Practicum from [Financial Modeling Prep](https://site.financialmodelingprep.com/) with the output data from [another team member's work](https://github.com/julieanneco/Scope3_Emissions) on outliers, skewness, and cleansing of our original "mega merged" file of 180k+ samples. [Econimic Social and Governance](https://greenly.earth/en-us/blog/company-guide/what-is-esg-data-and-how-to-use-it) data, was first merged on the feature **account_name** into the pre-treated data. The total dataset contained 40k+ samples and 25+ features. 
+My first step was to integrate the data obtained during the first half of my Data Science Practicum from [Financial Modeling Prep](https://site.financialmodelingprep.com/) with the output data from [another team member's work](https://github.com/julieanneco/Scope3_Emissions) on outliers, skewness, and cleansing of our original "mega merged" file of 180k+ samples. [Economic, Social, and Governance](https://greenly.earth/en-us/blog/company-guide/what-is-esg-data-and-how-to-use-it) data, was first merged on the feature **account_name** into the pre-treated data. The total dataset contained 40k+ samples and 25+ features. 
 
 It was discovered that the feature account_name could have duplicity in association with accound_id. To rectify account_names, the most recently reported account_name was chosen to replace all account_names associated with a single account_id. This method was also used to correct duplicity found in stock symbol related features. 
 
