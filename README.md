@@ -21,10 +21,10 @@ This repository contains notebooks, data, and a python library associated with w
     * nn_v14 - Jupyter notebook: This notebook contains the 'pipeline' for training and evaluating the final model.
 >[!NOTE]
 >The notebooks in this repo contain environment specific lines which must be edited as appropriate before running.
-* Data - One CSV and one sub-directory containing 17 additional CSVs 
+* Data - One CSV and one sub-directory containing 17 additional CSVs  
     * GHG_Post_Outlier - CSV file: This is the source data which is processed by nn_data_prep_V2.
     * Scope_3_emissions_type_csvs/ - Sub-directory: This directory contains 17 CSVs separating the source data by type three emissions type. 
-* logs - 364 total directories containing log files
+* logs - 364 total directories containing log files  
     * (Scope_3_emissions_type) - Sub-directory: This directory contains sub-directories holding training and validation data for all folds completed during training on all type three emissions types.
     * fit - Sub-irectory - This directory contains timestamped training and validation data for use with TensorBoards.
 * Models - Keras files: This directory contains stored models for all neural networks trained (v2-v14).
