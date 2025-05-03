@@ -18,6 +18,8 @@ This repository contains notebooks, data, and a python library associated with w
 * Code - Two notebooks
   While this project used more than 10 notebooks the notebooks contained in this directory contains the most polished and complete of all versions. Differences between the notebooks are either variations in network topology/hyperparameters, which is provided below, or in implementing coding/data science best practices.
     * nn_data_prep_V2 - Jupyter notebook: This notebook prepares and visualizes the source data for use in the feed-forward neural network notebook. Note EDA, cleansing, and outlier treatment was performed the previous term by a different team member. 
+[!NOTE]
+The notebooks in this repo contain environment specific lines which must be edited as appropriate before running.
     * nn_v14 - Jupyter notebook: This notebook contains the 'pipeline' for training and evaluating the final model. 
 * Data - One CSV and one sub-directory containing 17 additional CSVs 
     * GHG_Post_Outlier - CSV file: This is the source data which is processed by nn_data_prep_V2.
@@ -40,10 +42,13 @@ It was discovered that the feature account_name could have duplicity in associat
 
 After correcting account_id and stock symbol features, remaining zeros found within the data were treated. It was determined that imputing would not be perfomed on the dataset and instead all samples with NaN or 0 entries would be dropped. This was due to the fact that features within the data have high skewness, range, and other nuance. Imputing in a meaningful way may not be possible. The image below shows the remaining samples by emissions type after dropping NaNs/0s.
 
-![Samples after dropping zero and NaN rows](/assets/counts_with_ESG.png)
+![Samples after dropping zero and NaN rows](/Assets/counts_with_ESG.png)
 
+Noting that many of the emissions types have single to low double digit sample counts it was determined that ESG data would be abandoned and the remainder of the project would be conducted on the 40k sample dataset mentioned above without merging in ESG data. Below shows samples per emission type without the drops induced by adding ESG data. Notice there are still many emissions types with low sample sizes, but the Y-scale has shifted significantly upward.
 
+![Samples without adding ESG](/Assets/counts_without_ESG.png)
 
+Within the neural network training loops described below the data was scaled using standard scaler. Previous analysis showed extreme ranges within the data (5+ orders of magnitude) for many features. 
 
 
 
